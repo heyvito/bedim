@@ -2,7 +2,7 @@
 <p align="center">
 <img alt="Platform" src="https://img.shields.io/badge/platform-macOS-yellow.svg?style=flat" />
 <img alt="Language" src="https://img.shields.io/badge/language-ObjC-blue.svg?style=flat" />
-<img alt="Version" src="https://img.shields.io/github/tag/victorgama/dropletkit.svg?color=green&style=flat" />
+<img alt="Version" src="https://img.shields.io/github/tag/victorgama/bedim.svg?color=green&style=flat" />
 <img alt="License" src="https://img.shields.io/github/license/victorgama/bedim.svg?style=flat" />
 </p>
 
@@ -12,6 +12,14 @@ Bedim is a small MenuBar app that blurs your wallpapers when an application is v
 * Requires: macOS 10.10 or higher
 
 **Note**: the default `master` branch will always be stable.
+
+## What?
+Here, imagine your desktop, without any windows:
+![](https://i.imgur.com/db1UnOo.jpg)
+
+Bedim keeps watching open windows and their location. When a window is then present in your screen, your wallpaper gets blurred:
+
+![](https://i.imgur.com/tODwoCi.png)
 
 ## Install
 * [Download Bedim](https://github.com/victorgama/bedim/releases/download/v1.0/Bedim.zip)
