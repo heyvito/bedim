@@ -23,9 +23,11 @@
 - (id)valueForAttribute:(NSString *)attribute {
     CFTypeRef value = NULL;
     AXError err = AXUIElementCopyAttributeValue((__bridge AXUIElementRef)_element, (__bridge CFStringRef)attribute, &value);
+#ifdef DEBUG
     if(err != kAXErrorSuccess) {
         NSLog(@"AX call failed for element %@: %d", _element, err);
     }
+#endif
     return CFBridgingRelease(value);
 }
 
@@ -37,9 +39,11 @@
                                    index,
                                    count,
                                    &values);
+#ifdef DEBUG
     if(err != kAXErrorSuccess) {
         NSLog(@"AX call failed for element %@: %d", _element, err);
     }
+#endif
     
     return CFBridgingRelease(values);
 }
