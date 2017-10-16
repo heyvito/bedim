@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "BDEventRouter.h"
 #import "BDAXObserver.h"
+#import "DebugLog.h"
 
 
 @implementation BDEventRouter {
@@ -75,6 +76,7 @@
 
 
 - (void)workspaceNotification:(NSNotification *)aNotification {
+    Debug(@"[BDEventRouter] Dispatching notification based on %@", aNotification.name);
     if(self.delegate) { [self.delegate bdEventReceived]; }
 }
 

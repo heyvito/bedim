@@ -6,9 +6,11 @@
 //  Copyright © 2017 Victor Gama. All rights reserved.
 //
 
+#import <Cocoa/Cocoa.h>
 #import "BDAXObserver.h"
 #import "BDWindow.h"
-#import <Cocoa/Cocoa.h>
+#import "DebugLog.h"
+
 
 static NSString * const BDAXObserverWindowKey = @"PHAXObserverWindow";
 
@@ -22,8 +24,9 @@ static NSString * const BDAXObserverWindowKey = @"PHAXObserverWindow";
 
 #pragma mark - AXObserverCallback
 
-static void BDAXObserverCallback(__unused AXObserverRef observer, __unused AXUIElementRef element, __unused CFStringRef notification, __unused void *data) {
+static void BDAXObserverCallback(__unused AXObserverRef observer, AXUIElementRef element, CFStringRef notification, __unused void *data) {
     @autoreleasepool {
+        Debug(@"[BDAXObserverCallback] Dispatching notification based on %@ (%@)", (__bridge NSString *)notification, (__bridge id)element);
         [[NSNotificationCenter defaultCenter] postNotificationName:@"BDAX_NOTIFICATION"
                                                             object:nil
                                                           userInfo:nil];

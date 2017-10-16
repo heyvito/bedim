@@ -35,7 +35,9 @@ static AXUIElementRef systemWideElement = NULL;
 }
 
 - (void)applicationWillFinishLaunching:(NSNotification *)notification {
+#ifndef DEBUG
     PFMoveToApplicationsFolderIfNecessary();
+#endif
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {

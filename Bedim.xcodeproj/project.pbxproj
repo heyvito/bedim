@@ -30,6 +30,7 @@
 		DABEF7BB1F93F3930059A631 /* BDAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DABEF7B91F93F3930059A631 /* BDAboutViewController.xib */; };
 		DABEF7BD1F93F4980059A631 /* Licenses in Resources */ = {isa = PBXBuildFile; fileRef = DABEF7BC1F93F4980059A631 /* Licenses */; };
 		DABEF7C01F93FE1A0059A631 /* BDFileSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = DABEF7BF1F93FE1A0059A631 /* BDFileSystem.m */; };
+		DAE460901F94CA8E0029D8A3 /* NSObject+BDDebouncer.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE4608F1F94CA8E0029D8A3 /* NSObject+BDDebouncer.m */; };
 		DAEBDC991F9427720017DF80 /* LetsMove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAEBDC981F9427720017DF80 /* LetsMove.framework */; };
 		DAEBDC9A1F9427720017DF80 /* LetsMove.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DAEBDC981F9427720017DF80 /* LetsMove.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DAF1EB921F9427CC00063D79 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF1EB911F9427CC00063D79 /* Security.framework */; };
@@ -101,6 +102,9 @@
 		DABEF7BC1F93F4980059A631 /* Licenses */ = {isa = PBXFileReference; lastKnownFileType = text; path = Licenses; sourceTree = "<group>"; };
 		DABEF7BE1F93FE1A0059A631 /* BDFileSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFileSystem.h; sourceTree = "<group>"; };
 		DABEF7BF1F93FE1A0059A631 /* BDFileSystem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFileSystem.m; sourceTree = "<group>"; };
+		DAE4608A1F94C7260029D8A3 /* DebugLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebugLog.h; sourceTree = "<group>"; };
+		DAE4608E1F94CA8E0029D8A3 /* NSObject+BDDebouncer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+BDDebouncer.h"; sourceTree = "<group>"; };
+		DAE4608F1F94CA8E0029D8A3 /* NSObject+BDDebouncer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BDDebouncer.m"; sourceTree = "<group>"; };
 		DAEBDC981F9427720017DF80 /* LetsMove.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LetsMove.framework; path = ../Carthage/Build/Mac/LetsMove.framework; sourceTree = "<group>"; };
 		DAF1EB911F9427CC00063D79 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DAF1EB961F942AE900063D79 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
@@ -173,6 +177,8 @@
 				DA1448A01F9306F5008388FA /* BDImageProcessor.m */,
 				DA1448A21F9307D4008388FA /* BDUtility.h */,
 				DA1448A31F9307D4008388FA /* BDUtility.m */,
+				DAE4608E1F94CA8E0029D8A3 /* NSObject+BDDebouncer.h */,
+				DAE4608F1F94CA8E0029D8A3 /* NSObject+BDDebouncer.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -217,6 +223,7 @@
 				DABA2B1F1F92AE720029EC09 /* AppDelegate.m */,
 				DA1448961F9301FF008388FA /* BDEventRouter.h */,
 				DA1448971F9301FF008388FA /* BDEventRouter.m */,
+				DAE4608A1F94C7260029D8A3 /* DebugLog.h */,
 			);
 			path = Bedim;
 			sourceTree = "<group>";
@@ -335,6 +342,7 @@
 				DABA2B371F92CE0D0029EC09 /* BDRunningApplication.m in Sources */,
 				DABEF7C01F93FE1A0059A631 /* BDFileSystem.m in Sources */,
 				DA1448A11F9306F5008388FA /* BDImageProcessor.m in Sources */,
+				DAE460901F94CA8E0029D8A3 /* NSObject+BDDebouncer.m in Sources */,
 				DA1448981F9301FF008388FA /* BDEventRouter.m in Sources */,
 				DABA2B341F92B41E0029EC09 /* BDWorkspace.m in Sources */,
 				DABA2B3A1F92CEA70029EC09 /* BDAXUIElement.m in Sources */,

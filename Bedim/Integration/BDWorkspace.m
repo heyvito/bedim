@@ -12,6 +12,7 @@
 #import "BDWindow.h"
 #import "BDRunningApplication.h"
 #import "NSScreen+BDUtilities.h"
+#import "NSObject+BDDebouncer.h"
 #import "BDImageProcessor.h"
 #import "BDStorage.h"
 #import "BDFileSystem.h"
@@ -48,6 +49,18 @@
 }
 
 - (void)applyBlurEffect {
+    @synchronized(self) {
+        [self debounce:@selector(handleBlurRequest) withObject:nil delaying:0.5];
+        /* FIXME: This is not the ideal approach to fix it, but it potentially
+                  addresses the issue where macOS may emit events on "Hey,
+                  there's an application launching", but its window is not yet
+                  visible. We may be missing an AX event here, but hey.
+         */
+        [self repeat:@selector(handleBlurRequest) after:1];
+    }
+}
+
+- (void)handleBlurRequest {
     if(suspended) return;
     NSArray<NSScreen *> *screens = [NSScreen screens];
     NSSet<NSScreen *> *screensToBlur = [self screensToBlur];
