@@ -23,7 +23,7 @@ Bedim keeps watching open windows and their location. When a window is then pres
 
 ## Install
 * [Download Bedim](https://github.com/victorgama/bedim/releases/download/v1.0.1/Bedim.zip)
-* Lastest version SHA256: `4ce1c03a82fd26156f471be7ce4e441f296f2cfbf85341e3013eee00183b34bc`
+* Lastest version SHA256: `27e456883fa17de9b4b3aebb3405705de0b4895e93a0f2ce06d54fae5aacc70f`
 
 To install, extract the downloaded archive and just drag-and-drop Bedim to your `Applications` folder. When you run Bedim for the first time, you will be asked to allow it to control your UI. macOS will ask you to open `Security & Privacy` in `System Preferences`. Once open, go to the `Accessibility` section and click the checkbox next to Bedim to enable control. An admin account is required to accomplish this.
 
