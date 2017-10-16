@@ -61,9 +61,8 @@
         } else {
             if(S_ISREG(linfo.st_mode)) {
                 totalSize += linfo.st_size;
-            } else {
-                free(dName);
-            }
+            } 
+            free(dName);
         }
     }
     
@@ -79,15 +78,24 @@
     return [[self cachePath] stringByAppendingPathComponent:[BDUtility digestString:original]];
 }
 
++ (BOOL)isRunningFromApplicationsFolder {
+    NSArray<NSURL *> *applicationFolders = [[NSFileManager defaultManager] URLsForDirectory:NSApplicationDirectory inDomains:NSLocalDomainMask | NSUserDomainMask];
+    NSString *appPath = [[[NSBundle mainBundle] bundlePath] stringByDeletingLastPathComponent];
+    for(NSURL *url in applicationFolders) {
+        if([[url path] isEqualToString:appPath]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
 + (NSString *)cachePath {
     NSString *path = nil;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    if ([paths count]) {
-        NSString *bundleName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
-        path = [[paths objectAtIndex:0] stringByAppendingPathComponent:bundleName];
-        if(![[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:nil]) {
-            [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
-        }
+    NSString *bundleName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
+    path = [[paths objectAtIndex:0] stringByAppendingPathComponent:bundleName];
+    if(![[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:nil]) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
     }
     return path;
 }

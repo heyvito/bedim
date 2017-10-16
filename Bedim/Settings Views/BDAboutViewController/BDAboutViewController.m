@@ -19,6 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (void)viewWillAppear {
+    [super viewWillAppear];
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *path = [bundle pathForResource:@"Licenses" ofType:@""];
     NSString *contents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];

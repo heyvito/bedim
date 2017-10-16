@@ -16,6 +16,7 @@
 
 @property (nonatomic) int blurringAmount;
 @property (nonatomic) BOOL blurringEnabled;
+@property (nonatomic) BOOL autoStart;
 
 - (void)storeOriginalPicture:(nonnull NSString *)path forScreen:(nonnull NSScreen *)screen;
 - (nullable NSString *)originalPictureForScreen:(nonnull NSScreen *)screen;

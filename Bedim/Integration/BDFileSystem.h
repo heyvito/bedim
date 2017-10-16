@@ -14,4 +14,5 @@
 + (nonnull NSString *)cachePathForImageWithPath:(nonnull NSString *)original;
 + (nonnull NSString *)cachePath;
 + (void)clearCache;
++ (BOOL)isRunningFromApplicationsFolder;
 @end

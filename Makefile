@@ -7,7 +7,7 @@ bootstrap:
 
 build:
 	xcodebuild \
-		-project Bedim.xcodeproj \
+		-workspace Bedim.xcworkspace \
 		-scheme Bedim \
 		-configuration Release \
 		SYMROOT="$(shell pwd)/build/" \

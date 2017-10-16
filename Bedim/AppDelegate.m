@@ -7,9 +7,11 @@
 //
 
 #import <MASPreferences/MASPreferences.h>
+#import <LetsMove/LetsMove.h>
 #import "AppDelegate.h"
 #import "BDWorkspace.h"
 #import "BDEventRouter.h"
+#import "BDFileSystem.h"
 #import "BDSettingsViewController.h"
 #import "BDAboutViewController.h"
 
@@ -32,8 +34,12 @@ static AXUIElementRef systemWideElement = NULL;
     [work removeBlurEffect];
 }
 
+- (void)applicationWillFinishLaunching:(NSNotification *)notification {
+    PFMoveToApplicationsFolderIfNecessary();
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-//    [NSApp activateIgnoringOtherApps:YES];
+    [BDFileSystem isRunningFromApplicationsFolder];
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [self.statusItem setMenu:self.statusMenu];
     self.statusItem.image = [NSImage imageNamed:@"status_icon"];

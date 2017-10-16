@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <ServiceManagement/ServiceManagement.h>
 #import "BDStorage.h"
 #import "NSScreen+BDUtilities.h"
 #import "BDFileSystem.h"
@@ -15,11 +16,13 @@
     NSMutableDictionary<NSString *, NSString *> *originalPictures;
     int blurringAmount;
     BOOL blurringEnabled;
+    BOOL autoStart;
 }
 
 static NSString *kOriginalPictures = @"original_pictures";
 static NSString *kBlurringAmount = @"blurring_amount";
 static NSString *kBlurringEnabled = @"blurring_enabled";
+static NSString *kAutoStart = @"auto_start";
 
 + (instancetype)sharedStorage {
     static dispatch_once_t onceToken;
@@ -57,6 +60,19 @@ static NSString *kBlurringEnabled = @"blurring_enabled";
             self->blurringEnabled = YES;
         } else {
             self->blurringEnabled = [def boolForKey:kBlurringEnabled];
+        }
+        
+        if([def objectForKey:kAutoStart] == nil) {
+            NSLog(@"[BDStorage] kAutoStart is undefined.");
+            if([BDFileSystem isRunningFromApplicationsFolder]) {
+                    NSLog(@"[BDStorage] AutoRegistering to AutoStart since we're running from Applications folder.");
+                [self setAutoStart:YES];
+            } else {
+                NSLog(@"[BDStorage] Skipping autostart since we're not running from Applications folder.");
+                self->autoStart = NO;
+            }
+        } else {
+            self->autoStart = [def boolForKey:kAutoStart];
         }
         
         [self precacheScreensState];
@@ -99,6 +115,18 @@ static NSString *kBlurringEnabled = @"blurring_enabled";
         }
     }
     [self flushData];
+}
+
+- (BOOL)autoStart {
+    return self->autoStart;
+}
+
+- (void)setAutoStart:(BOOL)autoStart {
+    self->autoStart = autoStart;
+    NSString *bundleIdentifier = [[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"] stringByAppendingString:@"Helper"];
+    CFStringRef cfBundleID = (__bridge CFStringRef)bundleIdentifier;
+    BOOL result = SMLoginItemSetEnabled(cfBundleID, autoStart);
+    NSLog(@"SMLoginItemSetEnabled result: %d", result);
 }
 
 @end

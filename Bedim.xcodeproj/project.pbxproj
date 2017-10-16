@@ -17,6 +17,7 @@
 		DA1448C11F93C7F7008388FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1448C01F93C7F6008388FA /* Assets.xcassets */; };
 		DA1448C31F93D1E2008388FA /* MASPreferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1448C21F93D1E1008388FA /* MASPreferences.framework */; };
 		DA1448C41F93D1E2008388FA /* MASPreferences.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA1448C21F93D1E1008388FA /* MASPreferences.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DA8F50141F943A6C0032C154 /* BedimHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA8F50131F943A650032C154 /* BedimHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DABA2B201F92AE720029EC09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DABA2B1F1F92AE720029EC09 /* AppDelegate.m */; };
 		DABA2B281F92AE720029EC09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DABA2B261F92AE720029EC09 /* Main.storyboard */; };
 		DABA2B2B1F92AE720029EC09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DABA2B2A1F92AE720029EC09 /* main.m */; };
@@ -29,7 +30,10 @@
 		DABEF7BB1F93F3930059A631 /* BDAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DABEF7B91F93F3930059A631 /* BDAboutViewController.xib */; };
 		DABEF7BD1F93F4980059A631 /* Licenses in Resources */ = {isa = PBXBuildFile; fileRef = DABEF7BC1F93F4980059A631 /* Licenses */; };
 		DABEF7C01F93FE1A0059A631 /* BDFileSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = DABEF7BF1F93FE1A0059A631 /* BDFileSystem.m */; };
-		DAF2E2601F94118700276845 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DAF2E25F1F94118700276845 /* README.md */; };
+		DAEBDC991F9427720017DF80 /* LetsMove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAEBDC981F9427720017DF80 /* LetsMove.framework */; };
+		DAEBDC9A1F9427720017DF80 /* LetsMove.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DAEBDC981F9427720017DF80 /* LetsMove.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DAF1EB921F9427CC00063D79 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF1EB911F9427CC00063D79 /* Security.framework */; };
+		DAF1EB971F942AE900063D79 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF1EB961F942AE900063D79 /* ServiceManagement.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,8 +44,19 @@
 			dstSubfolderSpec = 10;
 			files = (
 				DA1448C41F93D1E2008388FA /* MASPreferences.framework in Embed Frameworks */,
+				DAEBDC9A1F9427720017DF80 /* LetsMove.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA8F500E1F9439CA0032C154 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				DA8F50141F943A6C0032C154 /* BedimHelper.app in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -62,6 +77,7 @@
 		DA1448BD1F932E3E008388FA /* BDSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BDSettingsViewController.xib; sourceTree = "<group>"; };
 		DA1448C01F93C7F6008388FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA1448C21F93D1E1008388FA /* MASPreferences.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MASPreferences.framework; path = ../Carthage/Build/Mac/MASPreferences.framework; sourceTree = "<group>"; };
+		DA8F50131F943A650032C154 /* BedimHelper.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = BedimHelper.app; path = "../../../Library/Developer/Xcode/DerivedData/Bedim-funojulxhpaycybcfxwpsbcyugvw/Build/Products/Debug/BedimHelper.app"; sourceTree = "<group>"; };
 		DABA2B1B1F92AE720029EC09 /* Bedim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bedim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DABA2B1E1F92AE720029EC09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DABA2B1F1F92AE720029EC09 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -85,7 +101,9 @@
 		DABEF7BC1F93F4980059A631 /* Licenses */ = {isa = PBXFileReference; lastKnownFileType = text; path = Licenses; sourceTree = "<group>"; };
 		DABEF7BE1F93FE1A0059A631 /* BDFileSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFileSystem.h; sourceTree = "<group>"; };
 		DABEF7BF1F93FE1A0059A631 /* BDFileSystem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFileSystem.m; sourceTree = "<group>"; };
-		DAF2E25F1F94118700276845 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DAEBDC981F9427720017DF80 /* LetsMove.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LetsMove.framework; path = ../Carthage/Build/Mac/LetsMove.framework; sourceTree = "<group>"; };
+		DAF1EB911F9427CC00063D79 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DAF1EB961F942AE900063D79 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +111,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAF1EB971F942AE900063D79 /* ServiceManagement.framework in Frameworks */,
+				DAF1EB921F9427CC00063D79 /* Security.framework in Frameworks */,
 				DA1448C31F93D1E2008388FA /* MASPreferences.framework in Frameworks */,
+				DAEBDC991F9427720017DF80 /* LetsMove.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +152,8 @@
 		DA14489B1F93062B008388FA /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				DA8F50131F943A650032C154 /* BedimHelper.app */,
+				DAEBDC981F9427720017DF80 /* LetsMove.framework */,
 				DA1448C21F93D1E1008388FA /* MASPreferences.framework */,
 				DA1448C01F93C7F6008388FA /* Assets.xcassets */,
 				DABA2B291F92AE720029EC09 /* Info.plist */,
@@ -167,9 +190,9 @@
 		DABA2B121F92AE720029EC09 = {
 			isa = PBXGroup;
 			children = (
-				DAF2E25F1F94118700276845 /* README.md */,
 				DABA2B1D1F92AE720029EC09 /* Bedim */,
 				DABA2B1C1F92AE720029EC09 /* Products */,
+				DAF1EB901F9427CC00063D79 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -217,6 +240,15 @@
 			path = BDAboutViewController;
 			sourceTree = "<group>";
 		};
+		DAF1EB901F9427CC00063D79 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAF1EB961F942AE900063D79 /* ServiceManagement.framework */,
+				DAF1EB911F9427CC00063D79 /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -228,6 +260,7 @@
 				DABA2B181F92AE720029EC09 /* Frameworks */,
 				DABA2B191F92AE720029EC09 /* Resources */,
 				DA1448C51F93D1E2008388FA /* Embed Frameworks */,
+				DA8F500E1F9439CA0032C154 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -281,7 +314,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAF2E2601F94118700276845 /* README.md in Resources */,
 				DA1448BF1F932E3E008388FA /* BDSettingsViewController.xib in Resources */,
 				DABA2B281F92AE720029EC09 /* Main.storyboard in Resources */,
 				DABEF7BB1F93F3930059A631 /* BDAboutViewController.xib in Resources */,
@@ -445,6 +477,7 @@
 				);
 				INFOPLIST_FILE = Bedim/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = io.vito.Bedim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -463,6 +496,7 @@
 				);
 				INFOPLIST_FILE = Bedim/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = io.vito.Bedim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
